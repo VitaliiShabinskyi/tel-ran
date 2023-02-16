@@ -1,0 +1,55 @@
+body {
+    font-size: 16px;
+    font-family: Montserrat, serif;
+}
+
+.container {
+    max-width: 700px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul {
+    line-height: 1.5;
+}
+
+table {
+    max-width: 500px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+th {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 3px double #000;
+    background: #f5f5f5;
+    color: #4d4d4d;
+}
+
+td {
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+td + td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tbody tr:hover {
+    background-color: #cacaca;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+table img {
+    max-width: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
