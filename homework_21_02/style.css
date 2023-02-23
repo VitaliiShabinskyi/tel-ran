@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+}
+.popup {
+    max-width: 420px;
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 210px);
+    padding: 32px;
+    background: #fff;
+    border-radius: 20px;
+}
+.popup h1 {
+    font-family: 'Nunito';
+font-weight: 800;
+font-size: 28px;
+line-height: 32px;
+margin-bottom: 24px;
+}
+.popup input {
+    padding: 14px 16px;
+    width: 100%;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #CFD8DC;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    outline: none;
+}
+.popup input[type="email"]:focus, .popup input[type="password"]:focus {
+    border-color: #FFE44D;
+}
+.popup p.info {
+    color: #7B8E98;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 16px 0 24px;
+}
+.popup input[type="submit"] {
+    background: #FFE44D;
+    border-radius: 55px;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+.popup a.login {
+    border: 1px solid #CFD8DC;
+    border-radius: 87px;
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #000;
+}
+.close {
+    position: absolute;
+    right: 19px;
+    top: 17px;
+    width: 18px;
+    height: 18px;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 8px;
+    content: ' ';
+    height: 18px;
+    width: 2px;
+    background-color: #1A1A1A;
+    transition: all .5s;
+}
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  .close:hover:before {
+    transform: rotate(-45deg);
+  }
+  .close:hover:after {
+    transform: rotate(45deg);
+  }
