@@ -48,3 +48,92 @@ body {
     letter-spacing: 0.15em;
     text-transform: uppercase;
 }
+
+/* Мои навыки  */
+.skills {
+    padding: 100px 0;
+}
+.skills-wrapper {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills-info {
+    width: 40%;
+}
+.skills-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+.skills-item {
+    margin-bottom: 30px;
+}
+.skill-name {
+    color: #727272;
+    margin-bottom: 20px;
+}
+.skill-scale {
+    height: 4px;
+    background-color: #C4C4C4;
+}
+.skill-scale-inner {
+    width: 70%;
+    height: 100%; /* 100% от высоты .skill-scale = 4px */
+    background-color: #34547A;
+}
+.skills-img {
+    width: 50%;
+}
+/* Как я работаю */
+.process {
+    background-color: #EEEFF1;
+    padding: 100px 0;
+}
+.process-wrapper {
+    width: 60%;
+    margin: auto;
+}
+.process-title {
+    font-size: 32px;
+    text-align: center;
+}
+.process-descr {
+    width: 50%;
+    color: #727272;
+    margin: 50px auto 60px; /* 1е - сверху, 2ое - справа/слева, 3е - снизу */
+    text-align: center;
+}
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-item {
+    width: 25%;
+    aspect-ratio: 1/1;
+    background-size: contain;
+}
+.project-item {
+    background-image: url(./images/sticker-1.jpg);
+}
+.project-item.laptop {
+    background-image: url(./images/sticker-2.jpg);
+}
+.project-item-inner {
+    height: 100%;
+    background: linear-gradient(0deg, rgba(52, 84, 122, 0.8), rgba(52, 84, 122, 0.8));
+    opacity: 0;
+    transition: all .7s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-item-inner:hover {
+    opacity: 1;
+}

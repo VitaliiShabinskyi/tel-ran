@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+.red {
+    background-color: #f00;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+}
+.green {
+    background-color: #0a0;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    z-index: 10;
+    transition: all 2s ease;
+}
+.green:hover {
+    transform: scale(1.5) rotate(-45deg);
+}
+.blue {
+    background-color: #00f;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+}
