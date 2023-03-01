@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+header {
+    height: 90px;
+    background-color: white;
+    padding: 10px 0;
+}
+.header-wrapper {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-link {
+    text-decoration: none;
+}
+.social-link:not(:last-child) {
+    margin-right: 55px;
+}
+/* intro блок */
+.intro {
+    padding: 25px 0 60px;
+    background-color: #4FBFA5;
+}
+.intro-wrapper {
+    width: 70%;
+    margin: auto;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+.intro-link {
+    font-size: 18px;
+    font-style: italic; /* курсив */
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.intro-call {
+    padding: 10px 15px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-style: italic;
+    border: none;
+    outline: none;
+}
+.intro-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.intro-text {
+    width: 30%;
+    font-style: italic;
+    color: #FFFFFF;
+}
+h1 {
+    font-size: 48px;
+    font-weight: 400; /* по умолчанию у h1 жирность 600 */
+}
+.intro-descr {
+    font-size: 14px;
+    margin: 20px 0 40px;
+    line-height: 150%;
+}
+.intro-btn {
+    background-color: #00868A;
+    padding: 15px 25px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: italic;
+    text-transform: uppercase; /* шрифт в верхнем регистре */
+    border: none;
+    outline: none; /* границы при нажатии */
+}
+.intro-img {
+    width: 60%;
+}
+/* 
+    button и input не унаследуют свойства для шрифтов
+
+   Задача. Убрать отступ у последней иконки, а у остальных оставить
+   Задача. Все элементы внутри nav расположить на равноудаленное расстояние друг от друга
+   gap: 50px
+*/
