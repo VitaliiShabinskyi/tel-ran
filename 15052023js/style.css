@@ -1,0 +1,41 @@
+div {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid rgb(55, 55, 55);
+}
+.red {
+    background-color: salmon;
+}
+.green {
+    background-color: seagreen;
+}
+.active {
+    background-color: darkslateblue;
+    width: 300px;
+    height: 300px;
+    border: none;
+}
+.active-text {
+    font-size: 28px;
+    color: seagreen;
+}
+/* Перевод слов */
+.words-container {
+    margin: 50px 0;
+}
+.word-container {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 8px;
+}
+.word-ru, .word-en {
+    font-size: 32px;
+}
+.word-en span {
+    display: none; /* скрыть элемент */
+}
