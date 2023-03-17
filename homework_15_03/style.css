@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.task1-square {
+    width: 200px;
+    height: 200px;
+    background-color: #f00;
+    margin: 10px auto;
+}
+
+.task2-square {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    margin: 10px auto;
+}
+
+.task3-square {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    margin: 10px auto;
+}
+
