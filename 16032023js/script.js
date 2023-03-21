@@ -40,6 +40,7 @@ const productName = document.querySelector('.product-name')
 const productPrice = document.querySelector('.product-price')
 const notification = document.querySelector('.notification')
 const productContainer = document.querySelector('.products-container')
+const productSearch = document.querySelector('.search-product')
 
 // слушаем отправку форму и вызываем функцию при отправке
 form.addEventListener('submit', function(event) {
@@ -56,7 +57,7 @@ form.addEventListener('submit', function(event) {
     // Отображаем уведомление
     showNotification()
     // Заново отображаем карточки после добавления продукта
-    renderProducts()
+    renderProducts(products)
 })
 
 // Функция очистки полей
@@ -81,22 +82,117 @@ function showNotification() {
 // Создать функцию, которая будет рендерить product-container для каждого объекта массива products
 // forEach(), innerHTML 
 
-function renderProducts() {
+function renderProducts(arr) {
     productContainer.innerHTML = ''
-    products.forEach(function(product) {
+    arr.forEach(function(product, index) {
         productContainer.innerHTML += `
-            <div class="product-container">
+            <div class="product-container" id="${index}">
                 <p class="product-card-name">${product.name}</p>
                 <p class="product-card-price">${product.price}</p>
+                <button class="delete-btn"> X </button>
             </div>
         `
     })
+    // Вызываем функцию слушатель наведения
+    onCardHover()
+    // Вызываем удаление элемента
+    deleteProduct()
 }
-renderProducts() // сразу отображаем пользователю продукты из product
+renderProducts(products) // сразу отображаем пользователю продукты из product
+
+function onCardHover() {
+    const productCards = document.querySelectorAll('.product-container')
+    productCards.forEach(function(card) {
+        card.addEventListener("mouseover", function() {
+            card.querySelector('.delete-btn').style.display = 'block'
+        })
+        card.addEventListener("mouseout", function() {
+            card.querySelector('.delete-btn').style.display = 'none'
+        })
+    })
+}
+
+function deleteProduct() {
+    const deleteBtns = document.querySelectorAll('.delete-btn')
+    deleteBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const currentId = btn.parentElement.id
+            btn.parentElement.remove()
+            // удалить из массива элемент с индексом currentId
+            console.log(currentId)
+            products.splice(currentId, 1)
+            // ререндер
+            renderProducts(products)
+        })
+    })
+}
+
+productSearch.addEventListener('input', function(event) {
+    const searchQuery = event.target.value // строка, по которой делаем поиск
+    const filteredProducts = findProduct(searchQuery)
+    renderProducts(filteredProducts)
+})
+
+function findProduct(value) {
+    return products.filter(function(product) {
+        return product.name.includes(value)
+    })
+}
+/*
+    Событие input происходит на каждый ввод символа в input
+
+    filter - фильтрует массив по определенным признакам и возвращает отфильтрованный массив
+    includes - проверяет наличие подстроки в строке. 
+        Hello.includes('H') = true
+        Hello.includes('R') = false
+*/
+
+
+
+
+// const numbers = [10, 20, 30, 40, 50]
+// console.log(numbers)
+// // // Удалить элемент 30
+// numbers.splice(2) // [10, 20, 40, 50]
+// console.log(numbers) // [0, 1, 2, 3]
+// // Удалить 20 и 40
+// numbers.splice(1, 2)
 
 /*
+    splice(index, count)
+         index - индекс элемента, с которого нужно начать удаление
+         count - количество элементов, которое нужно удалить
+
+    1. при наведении отображать Х
+    2. при отведении скрывать
+
+        Первый рендер
         <div class="product-container">
             <p class="product-card-name">Iphone 13</p>
             <p class="product-card-price">70000</p>
         </div>
+        <div class="product-container">
+            <p class="product-card-name">Iphone 13 Pro</p>
+            <p class="product-card-price">80000</p>
+        </div>
+        const products = queryAll('products')
+        products.addEventListener
+
+        Продукт добавлен
+
+        2й рендер
+        <div class="product-container">
+            <p class="product-card-name">Iphone 13</p>
+            <p class="product-card-price">70000</p>
+        </div>
+        <div class="product-container">
+            <p class="product-card-name">Iphone 13 Pro</p>
+            <p class="product-card-price">80000</p>
+        </div>
+        <div class="product-container">
+            <p class="product-card-name">Test</p>
+            <p class="product-card-price">5000</p>
+        </div>
+        products = queryAll('products')
+        products.addEvent
 */
